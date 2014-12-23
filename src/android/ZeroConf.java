@@ -90,12 +90,10 @@ public class ZeroConf extends CordovaPlugin {
 				return false;
 			}
 		} else if (action.equals("register")) {
-			JSONObject obj = args.optJSONObject(0);
-			if (obj != null) {
-				final String type = obj.optString("type");
-				final String name = obj.optString("name");
-				final int port = obj.optInt("port");
-				final String text = obj.optString("text");
+			final String type = args.optString(0);
+			final String name = args.optString(1);
+            		final int port    = args.optInt(2);
+            		final String text = args.optString(3) 
 				if (type == null) {
 					callbackContext.error("Missing required service info: type == null");
 					return false;
@@ -105,12 +103,6 @@ public class ZeroConf extends CordovaPlugin {
 						register(type, name, port, text);
 					}
 				});
-			} else {
-				callbackContext.error("Missing required service info: obj == null");
-				return false;
-
-			}
-
 		} else if (action.equals("close")) {
 			if (jmdns != null) {
 				try {

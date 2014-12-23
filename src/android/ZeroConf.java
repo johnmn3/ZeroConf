@@ -93,7 +93,7 @@ public class ZeroConf extends CordovaPlugin {
 			final String type = args.optString(0);
 			final String name = args.optString(1);
             		final int port    = args.optInt(2);
-            		final String text = args.optString(3) 
+            		final String text = args.optString(3);
 				if (type == null) {
 					callbackContext.error("Missing required service info: type == null");
 					return false;

@@ -35,7 +35,7 @@ var ZeroConf = {
 			console.error("'type' is a required field");
 			return;
 		}
-		return exec(null, ZeroConf.fail, "ZeroConf", "register", [{type: type, name: name, port: port, text: text}]);
+		return exec(null, ZeroConf.fail, "ZeroConf", "register", [type, name, port, text]);
 	},
 	unregister: function () {
 		return exec(null, ZeroConf.fail, "ZeroConf", "unregister", []);

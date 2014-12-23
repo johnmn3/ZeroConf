@@ -97,7 +97,7 @@ public class ZeroConf extends CordovaPlugin {
 				final int port = obj.optInt("port");
 				final String text = obj.optString("text");
 				if (type == null) {
-					callbackContext.error("Missing required service info.");
+					callbackContext.error("Missing required service info: type == null");
 					return false;
 				}
 				cordova.getThreadPool().execute(new Runnable() {
@@ -106,7 +106,7 @@ public class ZeroConf extends CordovaPlugin {
 					}
 				});
 			} else {
-				callbackContext.error("Missing required service info.");
+				callbackContext.error("Missing required service info: obj == null");
 				return false;
 
 			}
